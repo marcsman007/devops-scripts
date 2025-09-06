@@ -7,6 +7,7 @@ These scripts showcase my skills in **DevOps**, **cloud infrastructure**, and **
 
 ## 📂 Project Structure
 
+```
 devops-scripts/
 │
 ├── README.md
@@ -22,7 +23,7 @@ devops-scripts/
 ├── aws-ec2-manager.py # List AWS EC2 instances
 ├── log-parser.py # Search logs for keywords
 └── auto-restart-service.py # Restart a service if it goes down
-
+```
 
 ---
 
