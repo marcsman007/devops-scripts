@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+import boto3
+
+def list_ec2_instances():
+    ec2 = boto3.client('ec2')
+    response = ec2.describe_instances()
+
+    print("EC2 Instances:")
+    for reservation in response['Reservations']:
+        for instance in reservation['Instances']:
+            print(f"ID: {instance['InstanceId']} | State: {instance['State']['Name']}")
+
+if __name__ == "__main__":
+    list_ec2_instances()
