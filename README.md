@@ -230,6 +230,38 @@ nginx is down! Restarting...
 Restarting nginx...
 ```
 
+⏱️ Cron Jobs & Automation Examples
+
+You can schedule these scripts to run automatically using cron to simulate real-world automation in production environments.
+
+1. EC2 Health Check
+Check EC2 instance health every 30 minutes:
+```bash
+*/30 * * * * /home/ubuntu/devops-scripts/python-scripts/aws/venv/bin/python /home/ubuntu/devops-scripts/python-scripts/aws/ec2_health_check.py --region ap-southeast-1 >> /home/ubuntu/logs/ec2_health.log 2>&1
+```
+
+2. CPU & Memory Monitoring
+Monitor CPU and memory usage every 5 minutes:
+```bash
+*/5 * * * * /home/ubuntu/devops-scripts/python-scripts/system/venv/bin/python /home/ubuntu/devops-scripts/python-scripts/system/monitor-cpu-memory.py >> /home/ubuntu/logs/cpu_mem.log 2>&1
+```
+
+3. S3 Backup
+Backup a local folder to S3 daily at 2 AM:
+```bash
+0 2 * * * /home/ubuntu/devops-scripts/python-scripts/aws/venv/bin/python /home/ubuntu/devops-scripts/python-scripts/aws/s3_backup.py --local /home/ubuntu/data --bucket my-backup-bucket >> /home/ubuntu/logs/s3_backup.log 2>&1
+```
+
+Optional Enhancements
+
+Email Alerts: Send notifications when thresholds are exceeded or services are restarted.
+
+Docker Automation: Automatically stop containers or clean up unused Docker resources.
+
+AWS Automation: Start/stop EC2 instances, or create snapshots automatically.
+
+💡 These examples demonstrate how scripts can be integrated into production-ready workflows, highlighting skills in automation, monitoring, and cloud management.
+
 🧑‍💻 About Me
 
 Hi, I'm Marc Jayson Macaburas, a Technical Support Specialist transitioning into DevOps.
